@@ -1,0 +1,13 @@
+<h2>Cadastrar novo membro</h2>
+
+<label for ="">Nome:</label>
+<input type="text" [(ngModel)]="member.name">
+<br>
+<label for ="">Sobrenome:</label>
+<input type="text" [(ngModel)]="member.surname">
+<br>
+<label for ="">Telefone:</label>
+<input type="text" [(ngModel)]="member.phone">
+<br>
+
+<button (click)="save()" class="button primary">Cadastrar</button>

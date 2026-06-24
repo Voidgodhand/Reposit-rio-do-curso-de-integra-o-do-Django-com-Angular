@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Router, RouterOutlet } from '@angular/router';
 import { ApiService } from './api';
 
 @Component({
@@ -11,15 +11,13 @@ import { ApiService } from './api';
 export class App {
   protected title = 'members-front';
 
-  selected_member = {id: 0, name: '', surname: '', photo: ''};
+  selected_member = {id: -1, name: '', surname: '', phone: ''};
 
   members = [
-    {name: 'Member 01', id: 1, surname: 'Ciclano', photo: 'http://minhaapp.com/photo1'},
-    {name: 'Member 02', id: 2, surname: 'Beltrano', photo: 'http://minhaapp.com/photo2'},
-    {name: 'Member 03', id: 3, surname: 'Fulano', photo: 'http://minhaapp.com/photo3'},
+    {name: '', id: -1, surname: '', phone: ''},
   ];
 
-  constructor(private api:ApiService) {
+  constructor(private api:ApiService, private router  : Router) {
     this.getMembers();
   }
 
@@ -29,20 +27,16 @@ export class App {
         this.members = data;
       },
       error: error => {
-        console.log("Aconteceu um erro", error.message);
+        console.log("Aconteceu um erro ao carregar os membros: ", error.message);
       }
     });
   };
 
   memberClicked = (member: { id: number }) => {
-    this.api.getMember(member.id).subscribe({
-      next: data => {
-        console.log(data);
-        this.selected_member = data;
-      },
-      error: error => {
-        console.log("Aconteceu um erro", error.message);
-      }
-    });
+    this.router.navigate(['member-detail', member.id]);
+  }
+
+  newMember() {
+    this.router.navigate(['new-member']);
   }
 }
