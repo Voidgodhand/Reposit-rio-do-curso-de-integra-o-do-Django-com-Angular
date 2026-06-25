@@ -11,7 +11,7 @@ import { App } from '../app';
 })
 export class NewMemberComponent implements OnInit {
 
-  member = { name: '', surname: '', phone: '' } 
+  member = { name: '', surname: '', phone: '' , email: '', address: ''}; 
 
   constructor(private api:ApiService,
   private app: App

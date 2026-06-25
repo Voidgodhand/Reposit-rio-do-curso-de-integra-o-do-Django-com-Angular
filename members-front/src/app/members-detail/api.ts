@@ -17,7 +17,7 @@ export class ApiService {
   };
 
   updateMember(member: any):Observable<any> {
-    let body = { name: member.name, surname: member.surname, phone: member.phone };
+    let body = { name: member.name, surname: member.surname, phone: member.phone , email: member.email, address: member.address, photo: member.photo};
     return this.http.put(this.baseUrl + 'members/' + member.id + '/', body,
       {headers: this.httpHeaders}
     );

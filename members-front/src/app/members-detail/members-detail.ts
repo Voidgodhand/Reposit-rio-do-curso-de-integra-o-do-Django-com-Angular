@@ -16,7 +16,7 @@ export class MembersDetailComponent implements OnInit {
   private api:ApiService,
   private router  : Router,
   private app: App) { }
-  selected_member = {id: 0, name: '', surname: '', phone: '', photo: ''};
+  selected_member = {id: 0, name: '', surname: '', phone: '', email: '', address: ''};
   selected_id: number = 0;
 
   ngOnInit() {
@@ -85,3 +85,4 @@ export class MembersDetailComponent implements OnInit {
     }
   }
 }
+

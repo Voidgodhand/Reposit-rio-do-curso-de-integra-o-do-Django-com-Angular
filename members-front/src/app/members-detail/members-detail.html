@@ -1,7 +1,5 @@
 <h2><span>Você está editando:</span> {{ selected_member.name}} {{ selected_member.surname}}</h2>
 
-<span class = "image left"><img src="{{ selected_member.photo }}" alt="Foto de {{ selected_member.name }}"></span>
-
 <label for ="">Id:</label>
 <input type="text" [(ngModel)]="selected_member.id" readonly>
 <br>
@@ -13,6 +11,12 @@
 <br>
 <label for ="">Telefone:</label>
 <input type="text" [(ngModel)]="selected_member.phone">
+<br>
+<label for ="">Email:</label>
+<input type="text" [(ngModel)]="selected_member.email">
+<br>
+<label for ="">Endereço:</label>
+<input type="text" [(ngModel)]="selected_member.address">
 <br>
 
 <button (click)="update()" class="button primary">Alterar</button>

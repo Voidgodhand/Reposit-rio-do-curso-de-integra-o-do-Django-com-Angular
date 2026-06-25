@@ -11,10 +11,10 @@ import { ApiService } from './api';
 export class App {
   protected title = 'members-front';
 
-  selected_member = {id: -1, name: '', surname: '', phone: ''};
+  selected_member = {id: -1, name: '', surname: '', phone: '', email: '', address:''};
 
   members = [
-    {name: '', id: -1, surname: '', phone: ''},
+    { id: -1, name: '', surname: '', phone: '', email: '', address: ''},
   ];
 
   constructor(private api:ApiService, private router  : Router) {
