@@ -1,4 +1,4 @@
-import { Component, OnInit, signal } from '@angular/core';
+import { Component, OnInit, signal, ChangeDetectionStrategy } from '@angular/core';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { ApiService } from './api';
 import { FormsModule } from '@angular/forms';
@@ -8,6 +8,7 @@ import { App } from '../app';
   selector: 'app-members-detail',
   imports: [FormsModule],
   templateUrl: './members-detail.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './members-detail.css',
 })
 export class MembersDetailComponent implements OnInit {
